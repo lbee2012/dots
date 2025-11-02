@@ -102,6 +102,9 @@ assign [class="obsidian"] $ws3
   #vesktop
 exec --no-startup-id vesktop
 assign [class="vesktop"] $ws1
+  #code
+exec --no-startup-id code-insiders
+assign [class="code-insiders"] $ws3
 
 
 
@@ -109,6 +112,8 @@ assign [class="vesktop"] $ws1
 	#lock_screen
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 	#specific_screen - xrandr
+bindsym $mod+Ctrl+Shift+Up exec xrandr --output eDP-1 --rotate normal
+bindsym $mod+Ctrl+Shift+Down exec xrandr --output eDP-1 --rotate inverted
 bindsym $mod+h exec xrandr --output HDMI-1-0 --rotate inverted --mode 1920x1080 --rate 50 --output eDP-1 --off
 bindsym $mod+l exec xrandr --output eDP-1 --auto --output HDMI-1-0 --off
 
