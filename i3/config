@@ -51,7 +51,7 @@ client.urgent           $red $red $white $red $red
 #restart i3
 bindsym $mod+Shift+r restart
 #exit i3
-bindsym $mod+Ctrl+Shift+x exec pkill i3
+bindsym $mod+Shift+x exec pkill i3
 
 #PERSONAL
 	#picom
@@ -62,11 +62,9 @@ exec --no-startup-id fcitx5
 #exec --no-startup-id ibus-daemon -rxRd
 	#screen_capture - flameshot
 bindsym $mod+Shift+s exec flameshot gui 
-bindsym mod4+Shift+s exec flameshot gui
 	#clipboard_manager - clipmenud
 exec --no-startup-id clipmenud
 bindsym $mod+v exec clipmenu
-bindsym mod4+v exec clipmenu
 	#hhkb_layout_laptop
 exec --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps"
 	
@@ -78,10 +76,10 @@ bindsym $mod+space exec dmenu_run -fn "Jetbrains Mono-14"
 
 	#terminal - kitty
 #bindsym $mod+r exec kitty
-bindsym mod4+r exec kitty
+bindsym $mod+r exec kitty
 	#file_manager - yazi
 #bindsym $mod+e exec kitty -e yazi
-bindsym mod4+e exec kitty -e yazi
+bindsym $mod+e exec kitty -e yazi
 	#super_shortcuts
 bindsym mod4+1 exec kitty -e yazi
 bindsym mod4+2 exec firefox-developer-edition
@@ -101,10 +99,10 @@ exec --no-startup-id obsidian
 assign [class="obsidian"] $ws3
   #vesktop
 exec --no-startup-id vesktop
-assign [class="vesktop"] $ws1
+assign [class="vesktop"] $ws2
   #code
-exec --no-startup-id code-insiders
-assign [class="code-insiders"] $ws3
+#exec --no-startup-id code-insiders
+#assign [class="code-insiders"] $ws3
 
 
 
@@ -158,10 +156,10 @@ bindsym $mod+Ctrl+Up focus up
 bindsym $mod+Ctrl+Right focus right
 
   #reposition_focused_window
-#bindsym $mod+Shift+Left move left
-#bindsym $mod+Shift+Down move down
-#bindsym $mod+Shift+Up move up
-#bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
 
   #workspaces_definition
 set $ws1 "1"
@@ -198,7 +196,7 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # resize window (you can also use the mouse for that)
-bindsym $mod+r mode "resize"
+bindsym $mod+Ctrl+Shift+r mode "resize"
 mode "resize" {
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
