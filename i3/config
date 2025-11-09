@@ -69,7 +69,7 @@ bindsym $mod+v exec clipmenu
 exec --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps"
 	
 	#wallpaper - feh
-exec --no-startup-id feh --bg-fill /home/sata/Git/dotfs/pics/2010_ong_chau_minh.jpg
+exec --no-startup-id feh --bg-fill /home/sata/git/dotfs/pics/.ON/2010_ong_chau_minh.jpg
 
   #application_menu - dmenu
 bindsym $mod+space exec dmenu_run -fn "Jetbrains Mono-14"
@@ -120,7 +120,9 @@ gaps outer 1
   #inner_paddings (between_windows)
 gaps inner 3
   #Ergomic M757s - xinput
-#exec --no-startup-id xinput --set-prop 11 "libinput Accel Speed" -0.69
+#exec --no-startup-id xinput --set-prop 11 "libinput Accel Speed" -1
+#exec --no-startup-id xinput --set-prop 12 "libinput Accel Speed" -1
+exec --no-startup-id xinput --set-prop 14 "libinput Accel Speed" -1
 exec --no-startup-id xinput set-prop 16 "libinput Accel Speed" -0.1
 
   #brightness - brightnessctl
