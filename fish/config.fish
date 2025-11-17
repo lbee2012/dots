@@ -8,20 +8,15 @@ eveklyna."
 
 alias i3='startx'
 
-alias git.dotfs='cd /home/sata/Git/dotfs'
-alias git.erichy='cd /home/sata/Git/erichy'
-alias git.notes='cd /home/sata/Git/notes'
+alias git.dots='cd /home/sata/git/dots'
+alias git.erichy='cd /home/sata/git/erichy'
+alias git.notes='cd /home/sata/git/notes'
 
 #fcitx5
-#set -x GTK_IM_MODULE fcitx
-#set -x QT_IM_MODULE fcitx
-#set -x XMODIFIERS "@im=fcitx"
-#set -x INPUT_METHOD fcitx
-
-#ibus
-set -x GTK_IM_MODULE   ibus
-set -x QT_IM_MODULE    ibus
-set -x XMODIFIERS      @im=ibus
+set -x GTK_IM_MODULE fcitx
+set -x QT_IM_MODULE fcitx
+set -x XMODIFIERS "@im=fcitx"
+set -x INPUT_METHOD fcitx
 
 export EDITOR=nvim
 export VISUAL=nvim

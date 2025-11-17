@@ -57,7 +57,7 @@ bindsym $mod+Shift+s exec flameshot gui
 exec --no-startup-id clipmenud
 bindsym $mod+v exec clipmenu
 #wallpaper - feh
-exec --no-startup-id feh --bg-fill /home/sata/git/dotfs/pics/.ON/2010_ong_chau_minh.jpg
+exec --no-startup-id feh --bg-fill /home/sata/git/dots/pics/.ON/2010_ong_chau_minh.jpg
 #application_menu - dmenu
 bindsym $mod+space exec dmenu_run -fn "Jetbrains Mono-14"
 #browser
