@@ -59,13 +59,10 @@ bindsym $mod+v exec clipmenu
 #wallpaper - feh
 exec --no-startup-id feh --bg-fill /home/sata/git/dots/pics/.ON/2010_ong_chau_minh.jpg
 #application_menu - dmenu
-bindsym $mod+space exec dmenu_run -fn "Jetbrains Mono-14"
+bindsym $mod+space exec dmenu_run -fn "Jetbrains Mono-12"
 #browser
 exec --no-startup-id firefox-developer-edition
-assign [class="firefox-developer-edition"] $ws1
-#vesktop
-exec --no-startup-id vesktop
-assign [class="vesktop"] $ws2
+assign [class="firefox"] $ws1
 #notes
 #exec --no-startup-id emacs
 #assign [class="emacs"] $ws3
@@ -83,7 +80,7 @@ bindsym $mod+q kill
 exec --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps"
 exec --no-startup-id xset r rate 250 25
 
-#terminal - kitty
+#terminal
 bindsym $mod+r exec kitty
 #file_manager - yazi
 bindsym $mod+e exec kitty -e yazi
