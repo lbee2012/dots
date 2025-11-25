@@ -28,7 +28,6 @@ bar {
         urgent_workspace     $red $red $bg
     }
 }
-
 #color schemes
 set $bg #282828
 set $white #dbdbdb
@@ -61,7 +60,7 @@ exec --no-startup-id feh --bg-fill /home/sata/git/dots/pics/.ON/2010_ong_chau_mi
 #application_menu - dmenu
 bindsym $mod+space exec dmenu_run -fn "Jetbrains Mono-12"
 #browser
-exec --no-startup-id firefox-developer-edition
+#exec --no-startup-id firefox
 assign [class="firefox"] $ws1
 #notes
 #exec --no-startup-id emacs
@@ -113,11 +112,6 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-
-#fullscreen
-bindsym $mod+f fullscreen toggle
-#splitting / floating
-bindsym $mod+x floating toggle
 
 #windows_layout (stacked | tabbed | toggle | splith | splitv)
 bindsym $mod+d layout toggle tabbed splith splitv
