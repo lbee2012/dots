@@ -4,7 +4,7 @@
 set $mod Mod1
 
 #System font: Windows' title, Status bar, ... (Not Terminal font)
-font pango:Jetbrains Mono 14
+font pango:Jetbrains Mono 12
 
 # I3-WM FR
 #https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -56,14 +56,14 @@ bindsym $mod+Shift+s exec flameshot gui
 exec --no-startup-id clipmenud
 bindsym $mod+v exec clipmenu
 #wallpaper - feh
-exec --no-startup-id feh --bg-fill /home/sata/git/dots/pics/.ON/2010_ong_chau_minh.jpg
+exec_always --no-startup-id feh --bg-fill ~/git/dots/pics/.ON/2010_ong_chau_minh.jpg
 #application_menu - dmenu
 bindsym $mod+space exec dmenu_run -fn "Jetbrains Mono-12"
 #browser
 #exec --no-startup-id firefox
 assign [class="firefox"] $ws1
 #notes
-#exec --no-startup-id emacs
+#assign [class="obsidian"] $ws3
 #assign [class="emacs"] $ws3
 
 # SYSTEMD
@@ -76,8 +76,8 @@ bindsym $mod+Shift+x exec pkill i3
 bindsym $mod+q kill
 
 #hhkb_layout_laptop
-exec --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps"
-exec --no-startup-id xset r rate 250 25
+exec_always --no-startup-id /usr/bin/setxkbmap -option "ctrl:swapcaps"
+exec_always --no-startup-id xset r rate 250 25
 
 #terminal
 bindsym $mod+r exec kitty

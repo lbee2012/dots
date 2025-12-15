@@ -10,7 +10,7 @@
 general {
         colors = true
         interval = 5
-	output_format = "i3bar"
+        output_format = "i3bar"
 }
 
 order += "volume master"
@@ -51,7 +51,7 @@ battery all {
         status_bat = "BAT"
         status_unk = "UNK"
         status_full = "FULL"
-        path = "/sys/class/power_supply/BAT%d/uevent"
+        path = "/sys/class/power_supply/BA%d/uevent"
         low_threshold = 20
 }
 
