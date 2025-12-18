@@ -15,7 +15,6 @@ general {
 
 order += "volume master"
 order += "cpu_usage"
-order += "disk /"
 order += "memory"
 order += "battery all"
 order += "tztime local"

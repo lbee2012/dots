@@ -12,7 +12,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 #i3status
 bar {
-    status_command i3status -c ~/.config/i3/i3status
+    status_command i3status -c ~/.config/i3/status
 
     position bottom
     colors {
@@ -63,8 +63,8 @@ bindsym $mod+space exec dmenu_run -fn "Jetbrains Mono-12"
 #exec --no-startup-id firefox
 assign [class="firefox"] $ws1
 #notes
-#assign [class="obsidian"] $ws3
-#assign [class="emacs"] $ws3
+assign [class="obsidian"] $ws3
+assign [class="emacs"] $ws3
 
 # SYSTEMD
 
@@ -76,17 +76,18 @@ bindsym $mod+Shift+x exec pkill i3
 bindsym $mod+q kill
 
 #hhkb_layout_laptop
-exec_always --no-startup-id /usr/bin/setxkbmap -option "ctrl:swapcaps"
+exec_always --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps"
 exec_always --no-startup-id xset r rate 250 25
 
 #terminal
-bindsym $mod+r exec kitty
+bindsym $mod+r exec alacritty
 #file_manager - yazi
-bindsym $mod+e exec kitty -e yazi
+bindsym $mod+e exec alacritty -e yazi
 
 #specific_screen - xrandr
 bindsym $mod+Ctrl+Shift+Up exec xrandr --output eDP-1 --rotate normal
 bindsym $mod+Ctrl+Shift+Down exec xrandr --output eDP-1 --rotate inverted
+bindsym $mod+Ctrl+Shift+Right exec xrandr --output DSI-1 --rotate right
 bindsym $mod+h exec xrandr --output HDMI-1-0 --rotate inverted --mode 1920x1080 --rate 50 --output eDP-1 --off
 bindsym $mod+l exec xrandr --output eDP-1 --auto --output HDMI-1-0 --off
 #outer_margins (around_edges)
@@ -96,12 +97,11 @@ gaps inner 3
 
 #cursor_speed - xinput
   #m575
-#exec --no-startup-id xinput --set-prop 11 "libinput Accel Speed" -1
+exec_always --no-startup-id xinput --set-prop "Logitech M575" "libinput Accel Speed" -1
   #m570
-#exec --no-startup-id xinput --set-prop 12 "libinput Accel Speed" -1
-#exec --no-startup-id xinput --set-prop 14 "libinput Accel Speed" -1
+exec_always --no-startup-id xinput --set-prop "Logitech M570" "libinput Accel Speed" -1
   #trackpadto
-exec --no-startup-id xinput set-prop 16 "libinput Accel Speed" -0.1
+exec_always --no-startup-id xinput set-prop "Virtual core XTEST pointer" "libinput Accel Speed" -0.1
 
 #brightness - brightnessctl
 bindsym XF86MonBrightnessUp exec brightnessctl set +10%
