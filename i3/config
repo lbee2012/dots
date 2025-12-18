@@ -80,14 +80,15 @@ exec_always --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps"
 exec_always --no-startup-id xset r rate 250 25
 
 #terminal
-bindsym $mod+r exec alacritty
+bindsym $mod+r exec kitty
 #file_manager - yazi
-bindsym $mod+e exec alacritty -e yazi
+bindsym $mod+e exec kitty -e yazi
 
 #specific_screen - xrandr
-bindsym $mod+Ctrl+Shift+Up exec xrandr --output eDP-1 --rotate normal
-bindsym $mod+Ctrl+Shift+Down exec xrandr --output eDP-1 --rotate inverted
-bindsym $mod+Ctrl+Shift+Right exec xrandr --output DSI-1 --rotate right
+bindsym $mod+Ctrl+Shift+Left exec xrandr -o 1
+bindsym $mod+Ctrl+Shift+Down exec xrandr -o 2
+bindsym $mod+Ctrl+Shift+Up exec xrandr -o 0
+bindsym $mod+Ctrl+Shift+Right exec xrandr -o 3
 bindsym $mod+h exec xrandr --output HDMI-1-0 --rotate inverted --mode 1920x1080 --rate 50 --output eDP-1 --off
 bindsym $mod+l exec xrandr --output eDP-1 --auto --output HDMI-1-0 --off
 #outer_margins (around_edges)
