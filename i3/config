@@ -80,9 +80,9 @@ exec_always --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps"
 exec_always --no-startup-id xset r rate 250 25
 
 #terminal
-bindsym $mod+r exec kitty
+bindsym $mod+r exec alacritty
 #file_manager - yazi
-bindsym $mod+e exec kitty -e yazi
+bindsym $mod+e exec alacritty -e yazi
 
 #specific_screen - xrandr
 bindsym $mod+Ctrl+Shift+Left exec xrandr -o 1
@@ -98,7 +98,7 @@ gaps inner 3
 
 #cursor_speed - xinput
   #m575
-exec_always --no-startup-id xinput --set-prop "Logitech M575" "libinput Accel Speed" -1
+exec_always --no-startup-id xinput --set-prop "Logitech ERGO M575S" "libinput Accel Speed" -0.6
   #m570
 exec_always --no-startup-id xinput --set-prop "Logitech M570" "libinput Accel Speed" -1
   #trackpadto
