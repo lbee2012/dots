@@ -56,7 +56,7 @@ set $browser firefox
 set $notes obsidian
 
 assign [class=$browser] $ws1
-assign [class="$notes"] $ws3
+assign [class=$notes] $ws3
 
 
 #input_method - ime
@@ -84,7 +84,7 @@ bindsym $mod+q kill
 
 #hhkb_layout_laptop
 exec_always --no-startup-id /usr/bin/setxkbmap -option "ctrl:swapcaps"
-exec_always --no-startup-id /usr/bin/setxkbmap -option "altwin:swap_alt_win"
+#exec_always --no-startup-id /usr/bin/setxkbmap -option "altwin:swap_alt_win"
 exec_always --no-startup-id xset r rate 250 25
 
 #terminal
