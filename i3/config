@@ -61,13 +61,13 @@ assign [class=$notes] $ws3
 
 #input_method - ime
 exec --no-startup-id fcitx5
-#screen_capture - shooter
-bindsym $mod+Shift+s exec xfce4-screenshooter -fc 
+#screen_capture - flameshot
+bindsym $mod+Shift+s exec flameshot gui
 #clipboard_manager - clipman
 exec --no-startup-id xfce4-clipman
 bindsym $mod+v exec xfce4-clipman-history
 #wallpaper - feh
-exec_always --no-startup-id feh --bg-fill ~/git/dots/pics/fam/2010_ong_chau_minh.jpg
+exec_always --no-startup-id feh --bg-fill ~/git/dots/pics/fam/2014-the_family.jpg
 #application_menu - dmenu
 bindsym $mod+space exec dmenu_run -fn "Noto Sans Mono-12"
 
