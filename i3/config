@@ -1,10 +1,10 @@
 
 #Wiki for a complete reference! : https://i3wm.org/docs/userguide.html
 
-set $mod Mod1
+set $mod Mod4
 
 #System font: Windows' title, Status bar, ... (Not Terminal font)
-font pango:Jetbrains Mono 12
+font pango:Noto Sans Mono 12
 
 # I3-WM FR
 #https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -48,71 +48,81 @@ client.urgent           $red $red $white $red $red
 
 # PERSONAL
 
-#keyboard - fcitx5
+
+set $term alacritty
+set $files yazi
+
+set $browser firefox
+set $notes obsidian
+
+assign [class=$browser] $ws1
+assign [class=$notes] $ws3
+
+
+#input_method - ime
 exec --no-startup-id fcitx5
-#screen_capture - flameshot
-bindsym $mod+Shift+s exec flameshot gui 
-#clipboard_manager - clipmenud
-exec --no-startup-id clipmenud
-bindsym $mod+v exec clipmenu
+#screen_capture - shooter
+bindsym $mod+Shift+s exec xfce4-screenshooter -fc 
+#clipboard_manager - clipman
+exec --no-startup-id xfce4-clipman
+bindsym $mod+v exec xfce4-clipman-history
 #wallpaper - feh
-exec_always --no-startup-id feh --bg-fill ~/git/dots/pics/.ON/2010_ong_chau_minh.jpg
+exec_always --no-startup-id feh --bg-fill ~/git/dots/pics/fam/2010_ong_chau_minh.jpg
 #application_menu - dmenu
-bindsym $mod+space exec dmenu_run -fn "Jetbrains Mono-12"
-#browser
-#exec --no-startup-id firefox
-assign [class="firefox"] $ws1
-#notes
-assign [class="obsidian"] $ws3
-assign [class="emacs"] $ws3
+bindsym $mod+space exec dmenu_run -fn "Noto Sans Mono-12"
+
+
 
 # SYSTEMD
 
 #restart_i3
 bindsym $mod+Shift+r restart
 #exit_i3
-bindsym $mod+Shift+x exec pkill i3
+bindsym $mod+Shift+x exec i3-msg exit
 #kill_instance
 bindsym $mod+q kill
 
 #hhkb_layout_laptop
-exec_always --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps"
+exec_always --no-startup-id /usr/bin/setxkbmap -option "ctrl:swapcaps"
+#exec_always --no-startup-id /usr/bin/setxkbmap -option "altwin:swap_alt_win"
 exec_always --no-startup-id xset r rate 250 25
 
 #terminal
-bindsym $mod+r exec alacritty
+bindsym $mod+r exec $term
 #file_manager - yazi
-bindsym $mod+e exec alacritty -e yazi
+bindsym $mod+e exec $term -e $files
 
-#specific_screen - xrandr
+#screen_orientations - xrandr
 bindsym $mod+Ctrl+Shift+Left exec xrandr -o 1
 bindsym $mod+Ctrl+Shift+Down exec xrandr -o 2
 bindsym $mod+Ctrl+Shift+Up exec xrandr -o 0
 bindsym $mod+Ctrl+Shift+Right exec xrandr -o 3
-bindsym $mod+h exec xrandr --output HDMI-1-0 --rotate inverted --mode 1920x1080 --rate 50 --output eDP-1 --off
-bindsym $mod+l exec xrandr --output eDP-1 --auto --output HDMI-1-0 --off
-#outer_margins (around_edges)
+
+#outer_margins
 gaps outer 1
-#inner_paddings (between_windows)
+#inner_paddings
 gaps inner 3
 
-#cursor_speed - xinput
+#few_adjustments - xinput
   #m575
 exec_always --no-startup-id xinput --set-prop "Logitech ERGO M575S" "libinput Accel Speed" -0.6
   #m570
 exec_always --no-startup-id xinput --set-prop "Logitech M570" "libinput Accel Speed" -1
-  #trackpadto
-exec_always --no-startup-id xinput set-prop "Virtual core XTEST pointer" "libinput Accel Speed" -0.1
 
 #brightness - brightnessctl
 bindsym XF86MonBrightnessUp exec brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
-#audio - PulseAudio
+#audio - pulseaudio
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+#same_but_another_way
+bindsym $mod+Down exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+bindsym $mod+Up exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym $mod+Right exec brightnessctl set +10%
+bindsym $mod+Left exec brightnessctl set 10%-
 
 #windows_layout (stacked | tabbed | toggle | splith | splitv)
 bindsym $mod+d layout toggle tabbed splith splitv
