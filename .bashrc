@@ -12,6 +12,9 @@ PS1='[\u@\h \W]\$ '
 
 alias i3='startx'
 alias ls='ls -1ao --color'
+alias vim='nvim'
+alias neofetch='fastfetch'
+alias zalo='xfreerdp3 /u:e /d: /v:100.64.0.40 /p:. /gfx'
 
 export EDITOR="/usr/bin/nvim"
 export VISUAL="$EDITOR"
